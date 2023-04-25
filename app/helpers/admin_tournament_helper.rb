@@ -1,0 +1,2 @@
+module AdminTournamentHelper
+end

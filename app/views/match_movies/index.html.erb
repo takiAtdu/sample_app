@@ -1,0 +1,7 @@
+<% @match_movies.each do |m| %>
+    <span><%= @players[m.player_a_id - 1] %></span>
+    <span><%= @players[m.player_b_id - 1] %></span>
+    <span><%= @players[m.player_c_id - 1] %></span>
+    <span><%= @players[m.player_d_id - 1] %></span>
+    <%= link_to "動画をみる", m.movie, target: :_blank %>
+<%  end %>
