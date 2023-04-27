@@ -1,2 +1,67 @@
-<h1>MatchMovies#search</h1>
-<p>Find me in app/views/match_movies/search.html.erb</p>
+<div>
+<%= form_with url: movies_search_path, class: "d-flex mb-3" do |form| %>
+    <%= form.text_field :key, class: "form-control" %>
+    <%= form.submit "検索", class: "form-control", style: "width: 20%" %>
+<% end %>
+</div>
+
+<% if @movies %>
+    <% @tournaments.each do |t| %>
+        <h4><%= @all_tournaments[t - 1] %></h4>
+        <% @movies.each do |m| %>
+            <% if t == m.tournament_id %>
+            <div>
+                <span>【<%= m.round %>】</span>
+
+                <% movie_link = m.movie.slice(17..-1) %>
+                <% img_link = "http://img.youtube.com/vi/" + movie_link + "/1.jpg" %>
+                <%= link_to m.movie, class: "text-decoration-none", target: :_blank do %>
+                    <div class="row justify-content-center text-decoration-none">
+                        <div class="col-5">
+                            <img src=<%= img_link %> style="width: 120px; height: 68px; object-fit: cover;">
+                        </div>
+
+                        <div class="col-6">
+                            <div>
+                                <% if @player_id_list.include?(m.player_a_id) %>
+                                    <span style="color:red"><%= @all_players[m.player_a_id - 1] %></span>
+                                <% else %>
+                                    <span><%= @all_players[m.player_a_id - 1] %></span>
+                                <% end %>
+
+                                <span>/</span>
+
+                                <% if @player_id_list.include?(m.player_b_id) %>
+                                    <span style="color:red"><%= @all_players[m.player_b_id - 1] %></span>
+                                <% else %>
+                                    <span><%= @all_players[m.player_b_id - 1] %></span>
+                                <% end %>
+                            </div>
+
+                            <div>
+                                <span>vs</span>
+                            </div>
+
+                            <div>
+                                <% if @player_id_list.include?(m.player_c_id) %>
+                                    <span style="color:red"><%= @all_players[m.player_c_id - 1] %></span>
+                                <% else %>
+                                    <span><%= @all_players[m.player_c_id - 1] %></span>
+                                <% end %>
+
+                                <span>/</span>
+
+                                <% if @player_id_list.include?(m.player_d_id) %>
+                                    <span style="color:red"><%= @all_players[m.player_d_id - 1] %></span>
+                                <% else %>
+                                    <span><%= @all_players[m.player_d_id - 1] %></span>
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+            <% end %>
+        <% end %>
+    <% end %>
+<% end %>

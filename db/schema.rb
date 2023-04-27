@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_24_081433) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_26_074554) do
+  create_table "affiliations", force: :cascade do |t|
+    t.integer "player_id"
+    t.string "affiliation"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "froms", force: :cascade do |t|
     t.integer "player_id"
     t.string "from"
@@ -27,6 +34,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_081433) do
     t.integer "player_d_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "round"
   end
 
   create_table "players", force: :cascade do |t|
