@@ -21,10 +21,10 @@ Rails.application.routes.draw do
   get 'admin/players/:id', to: 'admin_players#show'
   get 'admin/players/:id/edit', to: 'admin_players#edit'
 
-  get 'movies/', to: 'match_movies#index'
-  get 'movies/search', to: 'match_movies#search'
+  #get 'movies/', to: 'match_movies#index'
+  #get 'movies/search', to: 'match_movies#search'
   post 'movies/search', to: 'match_movies#search'
   get 'movies/:id', to: 'match_movies#show'
 
-  root 'match_movies#index'
+  root 'match_movies#search'
 end

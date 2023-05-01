@@ -13,12 +13,12 @@
 
   <body>
     <div class="bg-light py-2">
-        <div class="mx-auto px-3 d-flex justify-content-between align-items-end" style="max-width: 1200px; color: black;">
+        <div class="mx-auto px-3 d-flex justify-content-between align-items-end" style="max-width: 400px; color: black;">
           <%= link_to "Softtennis Laboratory", root_path, class: "text-decoration-none text-reset fs-4" %>
-          <%= link_to "検索", movies_search_path, class: "text-decoration-none text-reset pe-5" %>
+          <%# = link_to "検索", movies_search_path, class: "text-decoration-none text-reset pe-5" %>
         </div>
     </div>
-    <div class="mx-auto p-3" style="max-width: 1200px;">
+    <div class="mx-auto p-3" style="max-width: 400px;">
       <%= yield %>
     </div>
   </body>

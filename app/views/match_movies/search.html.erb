@@ -10,13 +10,13 @@
         <h4><%= @all_tournaments[t - 1] %></h4>
         <% @movies.each do |m| %>
             <% if t == m.tournament_id %>
-            <div>
+            <div class="py-1">
                 <span>【<%= m.round %>】</span>
 
                 <% movie_link = m.movie.slice(17..-1) %>
                 <% img_link = "http://img.youtube.com/vi/" + movie_link + "/1.jpg" %>
                 <%= link_to m.movie, class: "text-decoration-none", target: :_blank do %>
-                    <div class="row justify-content-center text-decoration-none">
+                    <div class="row justify-content-center text-decoration-none text-center">
                         <div class="col-5">
                             <img src=<%= img_link %> style="width: 120px; height: 68px; object-fit: cover;">
                         </div>
@@ -64,4 +64,9 @@
             <% end %>
         <% end %>
     <% end %>
+<% else %>
+    <div>
+        <p>選手名、大会名、所属、出身校などで検索可能です。</p>
+        <p>例）船水、天皇杯、NTT、早稲田</p>
+    </div>
 <% end %>
