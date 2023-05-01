@@ -17,8 +17,8 @@ class MatchMoviesController < ApplicationController
 
       tournament_id_list = Tournament.where("tournament LIKE ?", "%" + params[:key] + "%").pluck(:id)
 
-      @movies = Movie.where(player_a_id: @player_id_list).or(Movie.where(player_b_id: @player_id_list)).or(Movie.where(player_c_id: @player_id_list)).or(Movie.where(player_d_id: @player_id_list)).or(Movie.where(tournament_id: tournament_id_list)).distinct
-      @tournaments = Movie.where(player_a_id: @player_id_list).or(Movie.where(player_b_id: @player_id_list)).or(Movie.where(player_c_id: @player_id_list)).or(Movie.where(player_d_id: @player_id_list)).or(Movie.where(tournament_id: tournament_id_list)).distinct.pluck(:tournament_id)
+      @movies = Movie.where(player_a_id: @player_id_list).or(Movie.where(player_b_id: @player_id_list)).or(Movie.where(player_c_id: @player_id_list)).or(Movie.where(player_d_id: @player_id_list)).or(Movie.where(tournament_id: tournament_id_list)).distinct.order(id: :asc)
+      @tournaments = Movie.where(player_a_id: @player_id_list).or(Movie.where(player_b_id: @player_id_list)).or(Movie.where(player_c_id: @player_id_list)).or(Movie.where(player_d_id: @player_id_list)).or(Movie.where(tournament_id: tournament_id_list)).distinct.order(id: :asc).pluck(:tournament_id)
 
       @all_tournaments = Tournament.all.pluck(:tournament)
       @all_players = Player.all.pluck(:name)
