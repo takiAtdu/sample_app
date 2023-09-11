@@ -151,6 +151,21 @@ Affiliation.create(player_id: 32, affiliation: "日本体育大学")
 Affiliation.create(player_id: 32, affiliation: "能登高校")
 
 
+Player.create(name: "安藤優作")
+Affiliation.create(player_id: 33, affiliation: "東京ガス")
+Affiliation.create(player_id: 33, affiliation: "早稲田大学")
+Affiliation.create(player_id: 33, affiliation: "中京高校")
+
+Player.create(name: "安藤圭祐")
+Affiliation.create(player_id: 34, affiliation: "東邦ガス")
+Affiliation.create(player_id: 34, affiliation: "早稲田大学")
+Affiliation.create(player_id: 34, affiliation: "中京高校")
+
+
+
+
+
+
 Tournament.create(year: 2022, tournament: "天皇杯")
 Movie.create(tournament_id: 1, round: "決勝", movie: "https://youtu.be/6btSCZE2nps", player_a_id: 1, player_b_id: 2, player_c_id: 3, player_d_id: 4)
 Movie.create(tournament_id: 1, round: "準決勝", movie: "https://youtu.be/JAnZsJwhfz0", player_a_id: 1, player_b_id: 2, player_c_id: 5, player_d_id: 6)
@@ -167,3 +182,6 @@ Movie.create(tournament_id: 1, round: "5回戦", movie: "https://youtu.be/FxX_gU
 Movie.create(tournament_id: 1, round: "5回戦", movie: "https://youtu.be/N4s3_8dZpgs", player_a_id: 3, player_b_id: 4, player_c_id: 27, player_d_id: 28)
 Movie.create(tournament_id: 1, round: "5回戦", movie: "https://youtu.be/SnMv_gVdReQ", player_a_id: 29, player_b_id: 30, player_c_id: 13, player_d_id: 14)
 Movie.create(tournament_id: 1, round: "5回戦", movie: "https://youtu.be/my94YfN3gv8", player_a_id: 31, player_b_id: 32, player_c_id: 7, player_d_id: 8)
+
+Tournament.create(year: 2023, tournament: "全日本社会人")
+Movie.create(tournament_id: 2, round: "準々決勝", movie: "https://www.youtube.com/watch?v=zvRZPbpITwA", player_a_id: 7, player_b_id: 8, player_c_id: 33, player_d_id: 34)
